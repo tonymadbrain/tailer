@@ -1,0 +1,9 @@
+[Unit]
+Description=Tailer sends message to telegram when log message occur
+
+[Service]
+EnvironmentFile=/opt/tailer/tailer-environment
+ExecStart=/usr/bin/python -u /opt/tailer/main.py /var/log/nginx/isbis.ru.error.log
+
+[Install]
+WantedBy=multi-user.target
